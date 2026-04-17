@@ -13,7 +13,18 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ["Orbitron", "sans-serif"],
+        body: ["Rajdhani", "sans-serif"],
+      },
       colors: {
+        mars: {
+          crimson: "hsl(var(--mars-crimson))",
+          rust: "hsl(var(--mars-rust))",
+          deep: "hsl(var(--mars-deep))",
+          ember: "hsl(var(--mars-ember))",
+          black: "hsl(var(--mars-black))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
