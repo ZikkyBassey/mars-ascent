@@ -81,26 +81,26 @@ const Hero = () => {
           <span className="text-xs uppercase tracking-[0.3em] text-foreground/80">Transmission · Sol 001</span>
         </div>
 
-        <h1 className="font-display font-black text-[clamp(5rem,18vw,16rem)] leading-none text-gradient-mars text-glow">
+        <h1 className="font-display font-black text-[clamp(5rem,18vw,16rem)] leading-none text-gradient-mars text-glow-anim animate-bounce-in">
           $MARS
         </h1>
 
-        <p className="mt-6 text-lg md:text-2xl tracking-[0.3em] uppercase text-foreground/85 font-light">
+        <p className="mt-6 text-lg md:text-2xl tracking-[0.3em] uppercase text-foreground/85 font-light animate-fade-up" style={{ animationDelay: "400ms" }}>
           Built on Mars. Driven by Martians.
         </p>
 
-        <div id="cta" className="mt-12 flex flex-col sm:flex-row gap-4">
+        <div id="cta" className="mt-12 flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "700ms" }}>
           <a
             href="#about"
-            className="group relative inline-flex items-center justify-center px-9 py-4 rounded-full font-semibold uppercase tracking-[0.2em] text-sm text-primary-foreground overflow-hidden transition-all duration-500 hover:scale-105"
-            style={{ background: "var(--gradient-button)", boxShadow: "var(--glow-red)" }}
+            className="group relative inline-flex items-center justify-center px-9 py-4 rounded-full font-semibold uppercase tracking-[0.2em] text-sm text-primary-foreground overflow-hidden transition-all duration-500 hover:scale-105 animate-glow-pulse shine-sweep"
+            style={{ background: "var(--gradient-button)" }}
           >
             <span className="relative z-10">Launch Mission</span>
             <span className="absolute inset-0 bg-gradient-to-r from-mars-ember to-mars-crimson opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </a>
           <a
             href="#community"
-            className="inline-flex items-center justify-center px-9 py-4 rounded-full font-semibold uppercase tracking-[0.2em] text-sm border border-mars-crimson/50 text-foreground glass-panel hover:border-mars-ember hover:shadow-[var(--glow-red)] hover:-translate-y-0.5 transition-all duration-500"
+            className="inline-flex items-center justify-center px-9 py-4 rounded-full font-semibold uppercase tracking-[0.2em] text-sm border border-mars-crimson/50 text-foreground glass-panel shine-sweep hover:border-mars-ember hover:shadow-[var(--glow-red)] hover:-translate-y-0.5 transition-all duration-500"
           >
             Join the Martians
           </a>

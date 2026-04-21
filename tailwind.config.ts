@@ -107,6 +107,43 @@ export default {
           "0%": { transform: "rotate(0deg) translateX(8px) rotate(0deg)" },
           "100%": { transform: "rotate(360deg) translateX(8px) rotate(-360deg)" },
         },
+        "slide-in-left": {
+          "0%": { opacity: "0", transform: "translateX(-60px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        "slide-in-right": {
+          "0%": { opacity: "0", transform: "translateX(60px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        "glow-pulse": {
+          "0%, 100%": { boxShadow: "0 0 20px hsl(6 100% 50% / 0.3), 0 0 40px hsl(6 100% 50% / 0.15)" },
+          "50%": { boxShadow: "0 0 40px hsl(6 100% 50% / 0.7), 0 0 80px hsl(18 100% 58% / 0.4)" },
+        },
+        "scan-line": {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(100%)" },
+        },
+        "rocket-launch": {
+          "0%": { transform: "translateY(0) rotate(0deg)" },
+          "50%": { transform: "translateY(-6px) rotate(-8deg)" },
+          "100%": { transform: "translateY(0) rotate(0deg)" },
+        },
+        "text-flicker": {
+          "0%, 100%": { opacity: "1", textShadow: "0 0 30px hsl(6 100% 55% / 0.6), 0 0 60px hsl(14 100% 50% / 0.35)" },
+          "45%": { opacity: "0.85", textShadow: "0 0 10px hsl(6 100% 55% / 0.4)" },
+          "50%": { opacity: "1", textShadow: "0 0 50px hsl(18 100% 60% / 0.9), 0 0 100px hsl(6 100% 50% / 0.5)" },
+          "55%": { opacity: "0.9", textShadow: "0 0 20px hsl(6 100% 55% / 0.5)" },
+        },
+        "marquee": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "bounce-in": {
+          "0%": { opacity: "0", transform: "scale(0.3)" },
+          "50%": { opacity: "1", transform: "scale(1.08)" },
+          "70%": { transform: "scale(0.95)" },
+          "100%": { transform: "scale(1)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -117,6 +154,14 @@ export default {
         "tilt": "tilt 8s ease-in-out infinite",
         "shimmer": "shimmer 3s linear infinite",
         "orbit": "orbit 14s linear infinite",
+        "slide-in-left": "slide-in-left 0.9s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "slide-in-right": "slide-in-right 0.9s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "glow-pulse": "glow-pulse 2.5s ease-in-out infinite",
+        "scan-line": "scan-line 4s linear infinite",
+        "rocket-launch": "rocket-launch 0.6s ease-out",
+        "text-flicker": "text-flicker 5s ease-in-out infinite",
+        "marquee": "marquee 30s linear infinite",
+        "bounce-in": "bounce-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both",
       },
     },
   },
