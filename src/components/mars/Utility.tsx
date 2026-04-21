@@ -33,16 +33,16 @@ const Utility = () => {
           {items.map(({ icon: Icon, title, desc }, i) => (
             <div
               key={title}
-              className={`group glass-panel rounded-2xl p-7 relative overflow-hidden hover:-translate-y-2 hover:rotate-[0.5deg] transition-all duration-500 hover:border-mars-ember/60 hover:shadow-[var(--glow-red)] ${grid.visible ? "animate-fade-up" : "opacity-0"}`}
+              className={`group glass-panel shine-sweep rounded-2xl p-7 relative overflow-hidden hover:-translate-y-2 hover:rotate-[0.5deg] transition-all duration-500 hover:border-mars-ember/60 hover:shadow-[var(--glow-red)] ${grid.visible ? "animate-bounce-in" : "opacity-0"}`}
               style={{ animationDelay: `${i * 120}ms` }}
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                    style={{ background: "radial-gradient(circle at top, hsl(var(--mars-crimson) / 0.25), transparent 70%)" }} />
               <div className="relative">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-mars-crimson/15 border border-mars-crimson/40 text-mars-ember group-hover:shadow-[var(--glow-red)] group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-mars-crimson/15 border border-mars-crimson/40 text-mars-ember group-hover:shadow-[var(--glow-red)] group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 group-hover:animate-rocket-launch">
                   <Icon className="h-6 w-6" />
                 </div>
-                <h3 className="mt-6 font-display text-xl font-bold">{title}</h3>
+                <h3 className="mt-6 font-display text-xl font-bold group-hover:text-gradient-mars transition-all">{title}</h3>
                 <p className="mt-3 text-sm text-foreground/65 leading-relaxed">{desc}</p>
               </div>
             </div>

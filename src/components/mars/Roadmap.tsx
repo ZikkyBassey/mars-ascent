@@ -9,27 +9,32 @@ const phases = [
 
 const PhaseRow = ({ p, i }: { p: typeof phases[number]; i: number }) => {
   const { ref, visible } = useReveal<HTMLDivElement>();
+  const fromLeft = i % 2 === 0;
   return (
     <div
       ref={ref}
-      className={`md:grid md:grid-cols-2 md:gap-16 items-center ${i % 2 ? "" : "md:[&>*:first-child]:order-2"}`}
+      className={`md:grid md:grid-cols-2 md:gap-16 items-center ${fromLeft ? "" : "md:[&>*:first-child]:order-2"}`}
     >
       <div
-        className={`glass-panel rounded-2xl p-5 sm:p-7 relative ${i % 2 ? "md:text-right" : ""} hover:shadow-[var(--glow-red)] hover:-translate-y-1 transition-all duration-500 ${
-          visible ? (i % 2 ? "animate-fade-up" : "animate-fade-up") : "opacity-0"
+        className={`glass-panel shine-sweep rounded-2xl p-5 sm:p-7 relative ${fromLeft ? "" : "md:text-right"} hover:shadow-[var(--glow-red)] hover:-translate-y-1 transition-all duration-500 ${
+          visible ? (fromLeft ? "animate-slide-in-left" : "animate-slide-in-right") : "opacity-0"
         }`}
       >
         <div
           className="absolute top-1/2 -translate-y-1/2 hidden md:block"
-          style={{ [i % 2 ? "left" : ("right" as any)]: "-3rem" }}
+          style={{ [fromLeft ? "right" : ("left" as any)]: "-3rem" }}
         >
-          <div className="h-4 w-4 rounded-full bg-mars-ember shadow-[0_0_20px_hsl(var(--mars-ember))] animate-pulse-glow" />
+          <div className="h-4 w-4 rounded-full bg-mars-ember animate-glow-pulse" />
         </div>
         <div className="text-xs uppercase tracking-[0.4em] text-mars-ember">{p.tag}</div>
         <h3 className="mt-2 font-display text-2xl sm:text-3xl font-bold">{p.title}</h3>
-        <ul className={`mt-5 space-y-2 text-foreground/75 ${i % 2 ? "md:list-none" : ""}`}>
-          {p.items.map((it) => (
-            <li key={it} className="flex items-center gap-3 md:justify-start group">
+        <ul className={`mt-5 space-y-2 text-foreground/75 ${fromLeft ? "" : "md:list-none"}`}>
+          {p.items.map((it, idx) => (
+            <li
+              key={it}
+              className={`flex items-center gap-3 md:justify-start group ${visible ? "animate-fade-up" : "opacity-0"}`}
+              style={{ animationDelay: `${300 + idx * 100}ms` }}
+            >
               <span className="h-1 w-6 bg-mars-crimson group-hover:w-10 group-hover:bg-mars-ember transition-all duration-300" />
               {it}
             </li>
