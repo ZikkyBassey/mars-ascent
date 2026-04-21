@@ -15,7 +15,7 @@ const PhaseRow = ({ p, i }: { p: typeof phases[number]; i: number }) => {
       className={`md:grid md:grid-cols-2 md:gap-16 items-center ${i % 2 ? "" : "md:[&>*:first-child]:order-2"}`}
     >
       <div
-        className={`glass-panel rounded-2xl p-7 relative ${i % 2 ? "md:text-right" : ""} hover:shadow-[var(--glow-red)] hover:-translate-y-1 transition-all duration-500 ${
+        className={`glass-panel rounded-2xl p-5 sm:p-7 relative ${i % 2 ? "md:text-right" : ""} hover:shadow-[var(--glow-red)] hover:-translate-y-1 transition-all duration-500 ${
           visible ? (i % 2 ? "animate-fade-up" : "animate-fade-up") : "opacity-0"
         }`}
       >
@@ -26,7 +26,7 @@ const PhaseRow = ({ p, i }: { p: typeof phases[number]; i: number }) => {
           <div className="h-4 w-4 rounded-full bg-mars-ember shadow-[0_0_20px_hsl(var(--mars-ember))] animate-pulse-glow" />
         </div>
         <div className="text-xs uppercase tracking-[0.4em] text-mars-ember">{p.tag}</div>
-        <h3 className="mt-2 font-display text-3xl font-bold">{p.title}</h3>
+        <h3 className="mt-2 font-display text-2xl sm:text-3xl font-bold">{p.title}</h3>
         <ul className={`mt-5 space-y-2 text-foreground/75 ${i % 2 ? "md:list-none" : ""}`}>
           {p.items.map((it) => (
             <li key={it} className="flex items-center gap-3 md:justify-start group">
@@ -44,21 +44,21 @@ const PhaseRow = ({ p, i }: { p: typeof phases[number]; i: number }) => {
 const Roadmap = () => {
   const head = useReveal<HTMLDivElement>();
   return (
-    <section id="roadmap" className="relative py-32 overflow-hidden">
+    <section id="roadmap" className="relative py-20 md:py-32 overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-mars-crimson/10 blur-3xl pointer-events-none animate-pulse-glow" />
 
-      <div className="container relative z-10">
+      <div className="container relative z-10 px-5 md:px-8">
         <div ref={head.ref} className={`text-center max-w-2xl mx-auto ${head.visible ? "animate-fade-up" : "opacity-0"}`}>
           <span className="text-xs uppercase tracking-[0.4em] text-mars-ember">// Mission Timeline</span>
-          <h2 className="mt-4 font-display text-5xl md:text-6xl font-black">
+          <h2 className="mt-4 font-display text-4xl sm:text-5xl md:text-6xl font-black">
             The <span className="text-gradient-mars">Conquest</span>
           </h2>
         </div>
 
-        <div className="mt-20 relative">
+        <div className="mt-12 md:mt-20 relative">
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-mars-crimson/60 to-transparent hidden md:block" />
 
-          <div className="space-y-10">
+          <div className="space-y-6 md:space-y-10">
             {phases.map((p, i) => (
               <PhaseRow key={p.tag} p={p} i={i} />
             ))}

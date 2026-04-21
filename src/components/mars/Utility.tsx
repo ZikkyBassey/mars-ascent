@@ -13,15 +13,15 @@ const Utility = () => {
   const grid = useReveal<HTMLDivElement>();
 
   return (
-    <section id="utility" className="relative py-32">
+    <section id="utility" className="relative py-20 md:py-32">
       <div className="absolute inset-0 mars-grid opacity-30" />
-      <div className="container relative z-10">
+      <div className="container relative z-10 px-5 md:px-8">
         <div
           ref={head.ref}
           className={`text-center max-w-2xl mx-auto ${head.visible ? "animate-fade-up" : "opacity-0"}`}
         >
           <span className="text-xs uppercase tracking-[0.4em] text-mars-ember">// Power Systems</span>
-          <h2 className="mt-4 font-display text-5xl md:text-6xl font-black">
+          <h2 className="mt-4 font-display text-4xl sm:text-5xl md:text-6xl font-black leading-tight">
             The <span className="text-gradient-mars">Utility</span> Stack
           </h2>
           <p className="mt-6 text-foreground/70 text-lg">
@@ -29,7 +29,7 @@ const Utility = () => {
           </p>
         </div>
 
-        <div ref={grid.ref} className="mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div ref={grid.ref} className="mt-12 md:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
           {items.map(({ icon: Icon, title, desc }, i) => (
             <div
               key={title}
