@@ -147,6 +147,37 @@
   .animate-drift {
     animation: drift linear infinite;
   }
+  .animate-float-slow {
+    animation: float 9s ease-in-out infinite;
+  }
+  .hover-lift {
+    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-[var(--glow-red)];
+  }
+  .magnetic {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .magnetic:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+  .shine-sweep {
+    position: relative;
+    overflow: hidden;
+  }
+  .shine-sweep::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 30%, hsl(18 100% 70% / 0.35) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+  .shine-sweep:hover::before {
+    transform: translateX(100%);
+  }
+  .text-glow-anim {
+    animation: text-flicker 5s ease-in-out infinite;
+  }
 }
 
 @keyframes float {
@@ -164,4 +195,11 @@
   10% { opacity: 0.8; }
   90% { opacity: 0.8; }
   to { transform: translateX(110vw) translateY(-30px); opacity: 0; }
+}
+
+@keyframes text-flicker {
+  0%, 100% { opacity: 1; text-shadow: 0 0 30px hsl(6 100% 55% / 0.6), 0 0 60px hsl(14 100% 50% / 0.35); }
+  45% { opacity: 0.88; text-shadow: 0 0 10px hsl(6 100% 55% / 0.4); }
+  50% { opacity: 1; text-shadow: 0 0 50px hsl(18 100% 60% / 0.95), 0 0 100px hsl(6 100% 50% / 0.5); }
+  55% { opacity: 0.92; text-shadow: 0 0 20px hsl(6 100% 55% / 0.5); }
 }
