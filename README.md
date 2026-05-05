@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# mars-ascent
 
 TODO: Document your project here

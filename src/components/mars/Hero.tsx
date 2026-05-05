@@ -61,6 +61,13 @@ const Hero = () => {
           transition: "transform 0.05s linear",
         }}
       >
+        {/* Rocket exhaust */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 pointer-events-none" style={{ zIndex: -1 }}>
+          <div className="mx-auto w-4 h-32 animate-exhaust-flicker"
+               style={{ background: "linear-gradient(to bottom, hsl(18 100% 70% / 0.9), hsl(6 100% 50% / 0.5), transparent)", borderRadius: "0 0 50% 50%", filter: "blur(6px)" }} />
+          <div className="mx-auto -mt-28 w-8 h-28 animate-exhaust-flicker"
+               style={{ animationDelay: "0.15s", background: "linear-gradient(to bottom, hsl(6 100% 60% / 0.5), transparent)", borderRadius: "0 0 50% 50%", filter: "blur(10px)" }} />
+        </div>
         <div className="absolute inset-0 -z-10 blur-3xl opacity-70"
              style={{ background: "radial-gradient(ellipse at center 60%, hsl(6 100% 50% / 0.6), transparent 60%)" }} />
         <img
@@ -81,7 +88,7 @@ const Hero = () => {
           <span className="text-xs uppercase tracking-[0.3em] text-foreground/80">Transmission · Sol 001</span>
         </div>
 
-        <h1 className="font-display font-black text-[clamp(5rem,18vw,16rem)] leading-none text-gradient-mars text-glow-anim animate-bounce-in">
+        <h1 className="relative font-display font-black text-[clamp(5rem,18vw,16rem)] leading-none text-gradient-mars text-glow-anim animate-bounce-in glitch-title" data-text="$MARS">
           $MARS
         </h1>
 
