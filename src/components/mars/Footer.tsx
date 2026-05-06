@@ -1,7 +1,6 @@
 const socials = [
   { label: "Twitter / X", href: "https://x.com/STARBOUND___" },
   { label: "Telegram", href: "https://t.me/martiannation" },
-  { label: "Discord", href: "https://discord.gg" },
   { label: "DexScreener", href: "https://dexscreener.com/solana/CY6TDv7zr7McU8Sz3H65Hz9n8i4m4G5D7PeemfAimoon" },
 ];
 
