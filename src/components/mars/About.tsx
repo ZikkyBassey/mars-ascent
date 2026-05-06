@@ -48,7 +48,7 @@ const About = () => {
             <div className="text-[10px] uppercase tracking-[0.4em] text-foreground/40 mb-6">Token Info</div>
             <div className="grid grid-cols-2 gap-3 relative">
               {[
-                { k: "Total Supply", v: "1,000,000,000" },
+                { k: "Total Supply", v: "977,000,000" },
                 { k: "Network", v: "Solana" },
                 { k: "Buy / Sell Tax", v: "0% / 0%" },
                 { k: "Liquidity", v: "Burned 🔥" },
